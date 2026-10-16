@@ -1,0 +1,28 @@
+<section class="card">
+  <div class="row-between">
+    <h1>Sessions</h1>
+    <form id="filter-form" class="inline">
+      <label for="filter-date">Filter by date</label>
+      <input id="filter-date" name="date" type="date" />
+      <button class="btn small" type="submit">Show</button>
+      <button class="btn ghost small" type="button" id="clear-filter">Clear</button>
+    </form>
+  </div>
+
+  <p class="muted">Seats update live while this page is open.</p>
+
+  <p class="state" id="list-status" role="status">Loading sessions…</p>
+  <p class="error" id="list-error" role="alert" hidden></p>
+
+  <ul class="list" id="session-list"></ul>
+
+  <template id="session-template">
+    <li class="list-item">
+      <div>
+        <strong class="when"></strong>
+        <span class="seats"></span>
+      </div>
+      <div class="actions"></div>
+    </li>
+  </template>
+</section>

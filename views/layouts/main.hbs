@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}} · Gym Slots</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-authed="{{#if user}}1{{else}}0{{/if}}" data-role="{{user.role}}">
+    {{#if user}}
+      <nav class="nav">
+        <span class="brand">Gym Slots</span>
+        <a href="/sessions">Sessions</a>
+        <a href="/bookings">My bookings</a>
+        {{#if (eq user.role "admin")}}<a href="/admin">Admin</a>{{/if}}
+        <span class="nav-user">{{user.name}} · {{user.role}}</span>
+        <button id="logout-btn" class="btn ghost" type="button">Log out</button>
+      </nav>
+    {{/if}}
+    <main class="container">
+      {{{body}}}
+    </main>
+
+    <!-- socket.io client is served by the API server, no build step needed -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<section class="card">
+  <h1>My bookings</h1>
+
+  <p class="state" id="list-status" role="status">Loading your bookings…</p>
+  <p class="error" id="list-error" role="alert" hidden></p>
+
+  <ul class="list" id="booking-list"></ul>
+
+  <template id="booking-template">
+    <li class="list-item">
+      <div>
+        <strong class="when"></strong>
+        <span class="status"></span>
+        <span class="code"></span>
+      </div>
+      <div class="actions"></div>
+    </li>
+  </template>
+</section>

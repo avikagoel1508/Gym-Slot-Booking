@@ -1,0 +1,69 @@
+<section class="grid">
+  <div class="card">
+    <h1>Create a session</h1>
+    <form id="create-session-form" novalidate>
+      <div class="field">
+        <label for="new-date">Date</label>
+        <input id="new-date" name="date" type="date" />
+        <small class="field-error" data-error-for="date"></small>
+      </div>
+      <div class="field">
+        <label for="new-hour">Start hour (0–23)</label>
+        <input id="new-hour" name="startHour" type="number" min="6" max="22" step="1" />
+        <small class="field-error" data-error-for="startHour"></small>
+      </div>
+      <div class="field">
+        <label for="new-capacity">Capacity</label>
+        <input id="new-capacity" name="capacity" type="number" min="1" step="1" value="20" />
+        <small class="field-error" data-error-for="capacity"></small>
+      </div>
+      <p class="error" id="create-error" role="alert" hidden></p>
+      <p class="ok" id="create-ok" role="status" hidden></p>
+      <button class="btn" type="submit">Create session</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h1>Check someone in</h1>
+    <form id="checkin-form" novalidate>
+      <div class="field">
+        <label for="checkin-code">Check-in code</label>
+        <input id="checkin-code" name="code" type="text" placeholder="e.g. 7XKP2Q" autocapitalize="characters" />
+        <small class="field-error" data-error-for="code"></small>
+      </div>
+      <p class="error" id="checkin-error" role="alert" hidden></p>
+      <p class="ok" id="checkin-ok" role="status" hidden></p>
+      <button class="btn" type="submit">Mark present</button>
+    </form>
+  </div>
+</section>
+
+<section class="card">
+  <div class="row-between">
+    <h1>A session's bookings</h1>
+    <form id="session-picker" class="inline">
+      <label for="pick-date">Date</label>
+      <input id="pick-date" name="date" type="date" />
+      <button class="btn small" type="submit">Find sessions</button>
+    </form>
+  </div>
+
+  <p class="state" id="picker-status" role="status" hidden></p>
+  <p class="error" id="picker-error" role="alert" hidden></p>
+
+  <div class="field">
+    <label for="session-select">Session</label>
+    <select id="session-select">
+      <option value="">Choose a session…</option>
+    </select>
+  </div>
+
+  <p class="state" id="bookings-status" role="status" hidden></p>
+  <p class="error" id="bookings-error" role="alert" hidden></p>
+
+  <h2 class="h2">Confirmed bookings</h2>
+  <ul class="list" id="admin-booking-list"></ul>
+
+  <h2 class="h2">Waitlist</h2>
+  <ul class="list" id="admin-waitlist"></ul>
+</section>
